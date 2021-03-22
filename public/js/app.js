@@ -1,7 +1,6 @@
 /////////////             Declaration       ////////////
 const log = console.log;
 const input = document.querySelector(".word");
-const key = "7eb0a14d-631d-4608-958d-72425999d0c0";
 const scrhBtn = document.querySelector(".srch");
 const error = document.querySelector(".error");
 const wrapper = document.createElement("div");
