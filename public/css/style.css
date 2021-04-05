@@ -74,6 +74,10 @@ h1 {
 
   height: 65vh;
 }
+.bg {
+  height: 300px;
+  width: 300px;
+}
 .wrapper {
   display: flex;
   min-width: 30vw;
@@ -84,6 +88,7 @@ h1 {
   background: #ffffff;
   box-shadow: 17px 17px 34px #969696, -17px -17px 34px #ffffff;
 }
+
 .wrapper p {
   font-size: 1rem;
 }
@@ -100,20 +105,4 @@ h1 {
   font-size: 1.3rem;
   cursor: pointer;
   background: #fff;
-}
-footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  font-size: 1.2rem;
-  width: 100%;
-  background: #2d6cdf;
-  text-align: center;
-
-  padding: 1rem 0;
-  color: #fff;
-}
-footer a {
-  color: #fff;
-  text-decoration: none;
 }
