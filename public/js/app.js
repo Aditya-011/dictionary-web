@@ -25,8 +25,8 @@ async function getData(word) {
   const data = await res.json();
   //log(wrapper.innerHTML);
   wrapper.innerHTML = "<div></div>";
-  log(data);
-  if (wrapper.innerHTML === "") log("error");
+  //log(data);
+  // if (wrapper.innerHTML === "") log("error");
   if (!data.length || typeof data[0] === "string") {
     swal("Oops", "Please Enter a Correct Word!", "error");
   } else {
@@ -38,13 +38,13 @@ async function getData(word) {
 
 function component(data, word) {
   //document.querySelector(".bg").style.display = "none";
-  if ((data[0].prs = undefined)) log(123);
+  //if ((data[0].prs = undefined)) log(123);
   const query = document.createElement("h3");
   const grammar = document.createElement("p");
   const pronun = document.createElement("p");
   const meaning = document.createElement("p");
   const div = document.createElement("div");
-  console.log(div);
+  //console.log(div);
   document.querySelector(".data").appendChild(wrapper);
   wrapper.classList.add("wrapper");
   div.classList.add("playBtn");
@@ -57,7 +57,7 @@ function component(data, word) {
   query.innerHTML = `${word}`;
   grammar.innerHTML = `${data[0].fl}`;
   meaning.innerHTML = `${data[0].shortdef[0]}`;
-  log();
+  //log();
   if (data[0].fl != "abbreviation") {
     const soundName = data[0].hwi.prs[0].sound.audio;
     pronun.innerHTML = `${data[0].hwi.prs[0].ipa}`;
@@ -72,7 +72,7 @@ function renderSound(soundName, wrapper, div) {
   // https://media.merriam-webster.com/soundc11
   let subfolder = soundName.charAt(0);
   let soundSrc = `https://media.merriam-webster.com/soundc11/${subfolder}/${soundName}.wav?key=${key}`;
-  console.log(soundSrc);
+  //console.log(soundSrc);
   let aud = document.createElement("audio");
   aud.src = soundSrc;
   aud.controls = false;
