@@ -114,7 +114,7 @@ h1 {
   color: #fff;
   width: 0;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 650px) {
   .wrapper {
     padding: 2rem 2rem;
   }
