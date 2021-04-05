@@ -37,6 +37,7 @@ async function getData(word) {
 }
 
 function component(data, word) {
+  //document.querySelector(".bg").style.display = "none";
   if ((data[0].prs = undefined)) log(123);
   const query = document.createElement("h3");
   const grammar = document.createElement("p");
