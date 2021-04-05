@@ -9,15 +9,13 @@ const wrapper = document.createElement("div");
 scrhBtn.addEventListener("click", function run(e) {
   e.preventDefault();
   const word = input.value;
-
+  if (word === "") {
+    swal("Oops", "Please Enter a Word!", "error");
+  } else {
+    getData(word);
+  }
   // log(word);
-  setTimeout(function () {
-    if (word === "") {
-      alert("Please Enter a Word :)");
-    } else if (wrapper.innerHTML === "") {
-      getData(word);
-    }
-  }, 400);
+  setTimeout(function () {}, 400);
 });
 
 ////////////      functions             ///////////////
@@ -26,6 +24,7 @@ async function getData(word) {
   const res = await fetch(url);
   const data = await res.json();
   //log(wrapper.innerHTML);
+  wrapper.innerHTML = "<div></div>";
   log(data);
   if (wrapper.innerHTML === "") log("error");
   if (!data.length || typeof data[0] === "string") {
