@@ -43,14 +43,17 @@ function component(data, word) {
   const grammar = document.createElement("p");
   const pronun = document.createElement("p");
   const meaning = document.createElement("p");
-  const button = document.createElement("button");
+  const div = document.createElement("div");
+  console.log(div);
   document.querySelector(".data").appendChild(wrapper);
   wrapper.classList.add("wrapper");
+  div.classList.add("playBtn");
   wrapper.appendChild(query);
+  query.style.color = "#fff";
   wrapper.appendChild(grammar);
   wrapper.appendChild(pronun);
   wrapper.appendChild(meaning);
-  wrapper.appendChild(button);
+  wrapper.appendChild(div);
   query.innerHTML = `${word}`;
   grammar.innerHTML = `${data[0].fl}`;
   meaning.innerHTML = `${data[0].shortdef[0]}`;
@@ -58,22 +61,23 @@ function component(data, word) {
   if (data[0].fl != "abbreviation") {
     const soundName = data[0].hwi.prs[0].sound.audio;
     pronun.innerHTML = `${data[0].hwi.prs[0].ipa}`;
-    button.innerHTML = `<i class="fas fa-volume-up"></i>`;
+    div.innerHTML = `<i class="fas fa-volume-up"></i>`;
     if (soundName) {
-      renderSound(soundName, wrapper, button);
+      renderSound(soundName, wrapper, div);
     }
   }
 }
 
-function renderSound(soundName, wrapper, button) {
+function renderSound(soundName, wrapper, div) {
   // https://media.merriam-webster.com/soundc11
   let subfolder = soundName.charAt(0);
   let soundSrc = `https://media.merriam-webster.com/soundc11/${subfolder}/${soundName}.wav?key=${key}`;
-
+  console.log(soundSrc);
   let aud = document.createElement("audio");
   aud.src = soundSrc;
   aud.controls = false;
-  button.addEventListener("click", () => {
+  div.addEventListener("click", () => {
+    // console.log("ofrmr4kjgnf");
     aud.play();
   });
   wrapper.appendChild(aud);
