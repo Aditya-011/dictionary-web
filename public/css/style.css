@@ -16,6 +16,7 @@ body {
   background-image: url("../images/bodybg.svg");
   background-attachment: fixed;
   background-size: cover;
+  width: 100vw;
 }
 .header {
   flex-direction: column;
@@ -35,8 +36,8 @@ h1 {
 .input {
   height: 3rem;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  flex-direction: row;
+  max-width: 200px;
 }
 .input input {
   font-family: "Open Sans", sans-serif;
@@ -44,17 +45,15 @@ h1 {
   font-size: 1.2rem;
   font-weight: 550;
   border: none;
-  flex: 7;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
 }
 .input button {
   font-family: "Open Sans", sans-serif;
   border: none;
-  display: block;
   color: #dee1ec;
   padding: 0.7rem 1rem;
-  flex: 3;
+
   padding-right: 1rem;
   font-weight: 550;
   cursor: pointer;
@@ -69,11 +68,6 @@ h1 {
   background: #b2003d;
 }
 
-.input {
-  height: 3rem;
-  background: #fff;
-  border-radius: 25px;
-}
 .data {
   position: relative;
   display: flex;
@@ -119,4 +113,37 @@ h1 {
   cursor: pointer;
   color: #fff;
   width: 0;
+}
+@media only screen and (max-width: 500px) {
+  .wrapper {
+    padding: 2rem 2rem;
+  }
+  .wrapper h3 {
+    font-size: 1.2rem;
+  }
+  .wrapper p {
+    font-size: 1rem;
+  }
+  .playBtn {
+    font-size: 1.3rem;
+  }
+  .input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+  }
+  .input input {
+    max-width: 245px;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    border-radius: 25px;
+  }
+  .input button {
+    margin-top: 1rem;
+    width: 5rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.6rem;
+  }
 }
